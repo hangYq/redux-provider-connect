@@ -5,33 +5,11 @@ export  function counter(state = 0,action){
 			console.log("INCREMENT_COUNTER");
 			console.log(state);
 			return state+1;
-			break;
 		case 'DECREMENT_COUNTER':
 			console.log("DECREMENT_COUNTER");
 			return state-1;
-			break;
 		default:
 			console.log("default");
 			return state;
-			break;
-	}
-};
-
-
-export  function counter222(state = {a:1},action){
-	switch (action.type) {
-		case 'INCREMENT_COUNTER':
-			console.log("INCREMENT_COUNTER");
-			console.log(state);
-			return state.a+1;
-			break;
-		case 'DECREMENT_COUNTER':
-			console.log("DECREMENT_COUNTER");
-			return state.a-1;
-			break;
-		default:
-			console.log("default");
-			return state;
-			break;
 	}
 };

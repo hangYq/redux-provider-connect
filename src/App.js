@@ -1,6 +1,9 @@
 import { connect } from 'react-redux'
 import Counter from './components/Counter'
-import { increment,decrement } from './actions/counter';
+// import { increment,decrement } from './actions/counter';
+import * as actions from './actions/counter';
+import {bindActionCreators} from "redux";
+
 
 //将state.counter绑定到props的counter
 const mapStateToProps = (state) => {
@@ -11,9 +14,12 @@ const mapStateToProps = (state) => {
 };
 //将action的所有方法绑定到props上
 const mapDispatchToProps = (dispatch, ownProps) => {
+    // return {
+    //     increment: (...args) => dispatch(increment(...args)),
+    //     decrement: (...args) => dispatch(decrement(...args))
+    // }
     return {
-        increment: (...args) => dispatch(increment(...args)),
-        decrement: (...args) => dispatch(decrement(...args))
+    	...bindActionCreators(actions,dispatch)
     }
 };
 
